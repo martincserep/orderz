@@ -28,7 +28,8 @@
               "projects/admin/src/assets"
             ],
             "styles": [
-              "projects/admin/src/styles.scss"
+              "projects/admin/src/styles.scss",
+              "./node_modules/primeflex/primeflex.css"
             ],
             "scripts": []
           },
