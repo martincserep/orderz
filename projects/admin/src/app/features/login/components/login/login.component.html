@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div id="login-container">
+    <div id="form">
+        <form [formGroup]="loginForm" (ngSubmit)="sendLoginForm()" class="p-fluid">
+            <h1>Orderz - Admin</h1>
+            <div class="p-mb-5 p-mt-5 p-field">
+                <span class="p-float-label">
+                    <input formControlName="email" class="p-inputtext-lg" type="email" pInputText> 
+                    <label for="float-input">E-mail</label>
+                </span>
+            </div>
+            <div class="p-mb-5 p-mt-5 p-field">
+                <span class="p-float-label">
+                    <input formControlName="password" class="p-inputtext-lg" type="password" pInputText> 
+                    <label for="float-input">Password</label>
+                </span>
+            </div>
+            <div class="p-mb-2 p-mt-2 p-field">
+                <button pButton pRipple type="submit" label="Login" class="p-button-raised"></button>
+            </div>
+        </form>
+    </div>
+    <div id="design">
+        <img src="assets/work.svg" alt="work design image" />
+    </div>
+</div>
