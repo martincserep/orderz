@@ -1,6 +1,7 @@
 <div id="login-container">
     <div id="form">
-        <form [formGroup]="loginForm" (ngSubmit)="sendLoginForm()" class="p-fluid">
+        <p-progressSpinner styleClass="spinner" strokeWidth="4" *ngIf="isLoading"></p-progressSpinner>
+        <form [formGroup]="loginForm" *ngIf="!isLoading" (ngSubmit)="sendLoginForm()" class="p-fluid">
             <h1>Orderz - Admin</h1>
             <div class="p-mb-5 p-mt-5 p-field">
                 <span class="p-float-label">
@@ -15,7 +16,7 @@
                 </span>
             </div>
             <div class="p-mb-2 p-mt-2 p-field">
-                <button pButton pRipple type="submit" label="Login" class="p-button-raised"></button>
+                <button pButton pRipple [disabled]="isLoading" type="submit" label="Login" class="p-button-raised"></button>
             </div>
         </form>
     </div>

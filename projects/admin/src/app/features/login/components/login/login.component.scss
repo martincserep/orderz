@@ -8,17 +8,19 @@
     grid-template-columns: 30% 70%;
     grid-auto-flow: row;
     #form {
-        background-color: #fefefe;
-        animation: 1s ease-in-out showMenu;
-        width: 100%;
-        position: relative;
         p-progressSpinner {
+            color: #af2d2d;
             margin: 0;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            animation: custom-progress-spinner-dash 1.5s ease-in-out infinite, custom-progress-spinner-color 6s ease-in-out infinite;
         }
+        background-color: #fefefe;
+        animation: 1s ease-in-out showMenu;
+        width: 100%;
+        position: relative;
         form {
             margin: 0;
             position: absolute;
@@ -50,5 +52,11 @@
     }
     100% {
         transform: translateX(0);
+    }
+}
+@keyframes custom-progress-spinner-color {
+    100%,
+    0% {
+        stroke: #af2d2d;
     }
 }

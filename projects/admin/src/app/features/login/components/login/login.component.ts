@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -18,10 +19,11 @@ export class LoginComponent {
   sendLoginForm(): void {
     if (this.loginForm.valid) {
       this.isLoading = true;
-      this.loginService.login(this.loginForm.getRawValue())
+      setTimeout(() => {this.loginService.login(this.loginForm.getRawValue())}, 1000)
+      // this.loginService.login(this.loginForm.getRawValue())
     }
   }
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private messageService: MessageService) { }
 
 }
