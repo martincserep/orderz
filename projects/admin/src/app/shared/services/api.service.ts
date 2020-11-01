@@ -15,5 +15,17 @@ export class ApiService {
     });
   } 
 
+  post(url: string, data: any): Observable<any> {
+    return this.httpClient.post<any>([this.apiBaseUrl, url].join(''), JSON.stringify(data));
+  }
+  
+  patch(url: string, data: any): Observable<any> {
+    return this.httpClient.patch<any>([this.apiBaseUrl, url].join(''), JSON.stringify(data));
+  }
+
+  delete(url: string): Observable<any> {
+    return this.httpClient.delete<any>([this.apiBaseUrl, url].join(''));
+  }
+
   constructor(private httpClient: HttpClient) { }
 }
