@@ -1,0 +1,35 @@
+<h2>Latest Orders</h2>
+<div *ngFor="let order of latestOrders">
+    <div class="order new-order" *ngIf="order.status === 'NEW_ORDER'">
+        <div class="p-col-2">
+            <fa-icon [icon]="newOrder" ></fa-icon>
+        </div>
+        <div class="p-col-10">
+            {{order.customer.name}}
+        </div>
+    </div>
+    <div class="order processing-order" *ngIf="order.status === 'PROCESSING'">
+        <div class="p-col-2">
+            <fa-icon [icon]="processingOrder"></fa-icon>
+        </div>
+        <div>
+            {{order.customer.name}}
+        </div>
+    </div>
+    <div class="order fulfilled-order" *ngIf="order.status === 'FULFILLED'">
+        <div class="p-col-2">
+            <fa-icon [icon]="fulfilledOrder"></fa-icon>
+        </div>
+        <div>
+            {{order.customer.name}}
+        </div>
+    </div>
+    <div class="order canceled-oder" *ngIf="order.status === 'CANCELED'">
+        <div class="p-col-2">
+            <fa-icon [icon]="cancelOrder" ></fa-icon>
+        </div>
+        <div>
+            {{order.customer.name}}
+        </div>
+    </div>
+</div>

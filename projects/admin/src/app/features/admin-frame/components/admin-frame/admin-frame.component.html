@@ -1,1 +1,41 @@
-<p>admin-frame works!</p>
+<div class="p-grid">
+    <div class="p-col-2 navigation">
+        <div class="p-d-flex p-flex-column">
+            <div class="p-ai-start p-col-12 p-jc-center">
+                <h2>Orderz</h2>
+            </div>
+            <div id="menu" class="p-ai-stretch p-ml-4 p-d-flex p-flex-column">
+                <a routerLink="/home" routerLinkActive="active" class="p-mb-2 p-d-flex">
+                    <fa-icon [icon]="home" class="p-col-2"></fa-icon>
+                    <span class="p-col-10">Home</span>
+                </a>
+                <a routerLink="/orders" routerLinkActive="active" class="p-mb-2 p-d-flex">
+                    <fa-icon [icon]="orders" class="p-col-2"></fa-icon>
+                    <span class="p-col-10">Orders</span>
+                </a>
+                <a routerLink="/foods" routerLinkActive="active" class="p-mb-2 p-d-flex">
+                    <fa-icon [icon]="foods" class="p-col-2"></fa-icon>
+                    <span class="p-col-10">Foods</span>
+                </a>
+                <a routerLink="/finance" routerLinkActive="active" class="p-mb-2 p-d-flex">
+                    <fa-icon [icon]="finance" class="p-col-2"></fa-icon>
+                    <span class="p-col-10">Finance</span>
+                </a>
+                <a routerLink="/reports" routerLinkActive="active" class="p-mb-2 p-d-flex">
+                    <fa-icon [icon]="reports" class="p-col-2"></fa-icon>
+                    <span class="p-col-10">Reports</span>
+                </a>
+                <a routerLink="/settings" routerLinkActive="active" class="p-mb-2 p-d-flex">
+                    <fa-icon [icon]="settings" class="p-col-2"></fa-icon>
+                    <span class="p-col-10">Settings</span>
+                </a>
+            </div>
+            <div class="p-ai-end p-col-12">
+                <app-employee-info></app-employee-info>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-10" >
+        <router-outlet></router-outlet>
+    </div>
+</div>

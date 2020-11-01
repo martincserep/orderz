@@ -1,0 +1,24 @@
+.order {
+    background-color: #84bd34a6;
+    border-left: 4px solid #7ea04d;
+    padding-left: 1%;
+    width: 90%;
+    margin: auto;
+    border-radius: 2%;
+}
+.new-order {
+    background-color: #84bd34a6;
+    border-left: 4px solid #7ea04d;
+}
+.processing-order {
+    background-color: #bbbd34a6;
+    border-left: 4px solid #a08d4d;
+}
+.fulfilled-order {
+    background-color: #34bdaba6;
+    border-left: 4px solid #4d88a0;
+}
+.canceled-oder {
+    background-color: #bd3434a6;
+    border-left: 4px solid #a04d4d;
+}

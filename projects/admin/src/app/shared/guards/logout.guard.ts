@@ -13,7 +13,6 @@ export class LogoutGuard implements CanActivate {
       if (!this.loginService.loggedIn) {
         return true;
       }
-        
       return this.router.createUrlTree(['/']);
   }
   constructor(

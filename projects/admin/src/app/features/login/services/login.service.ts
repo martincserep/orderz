@@ -8,7 +8,7 @@ import { User } from '../interfaces/user.interface';
 })
 export class LoginService {
 
-  loggedIn: boolean = false;
+  loggedIn: boolean = true;
   login(user: User): void {
     this.apiService.get('login').subscribe((res) => {
       console.log(res);

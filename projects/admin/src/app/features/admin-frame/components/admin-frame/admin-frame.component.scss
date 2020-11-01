@@ -1,0 +1,19 @@
+.navigation{
+    height: 100vh;
+    #menu {
+        a {
+            text-decoration: none;
+            color: #000000;
+            &:hover {
+                color: #af2d2d;
+                transition: .1s ease-in-out;
+            }
+        }
+        .active {
+            border-left: 3px solid #af2d2d;
+            color: #af2d2d;
+            padding-left: 3px;
+            text-decoration: underline;
+        }
+    }
+}
