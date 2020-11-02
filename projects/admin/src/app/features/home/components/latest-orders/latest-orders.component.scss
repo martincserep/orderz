@@ -1,30 +1,37 @@
-.order {
-    background-color: #84bd34a6;
-    border-left: 4px solid #7ea04d;
-    padding-left: 1%;
-    width: 90%;
-    margin: auto;
-    margin: 1rem auto;
-    h2 {
-        font-size: 1.2rem;
-        font-weight: bold;
+#latest-orders-container{
+    height: 100%;
+    #latest-orders {
+        height: 90%;
+        overflow: hidden scroll;
+    .order {
+        background-color: #84bd34a6;
+        border-left: 4px solid #7ea04d;
+        padding-left: 1%;
+        width: 90%;
+        margin: auto;
+        margin: 1rem auto;
+        h2 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+    .new-order {
+        color: #fefefe;
+        background-color: #0288D1A8;
+        border-left: 10px solid #0288D1;
+    }
+    .processing-order {
+        background-color: #FBC02DA8;
+        border-left: 10px solid #FBC02D;
+    }
+    .fulfilled-order {
+        background-color: #689F38A8;
+        border-left: 10px solid #689F38;
+    }
+    .canceled-oder {
+        color: #fefefe;
+        background-color: #d32f2fa8;
+        border-left: 10px solid #D32F2F;
     }
 }
-.new-order {
-    color: #fefefe;
-    background-color: #0288D1A8;
-    border-left: 10px solid #0288D1;
-}
-.processing-order {
-    background-color: #FBC02DA8;
-    border-left: 10px solid #FBC02D;
-}
-.fulfilled-order {
-    background-color: #689F38A8;
-    border-left: 10px solid #689F38;
-}
-.canceled-oder {
-    color: #fefefe;
-    background-color: #d32f2fa8;
-    border-left: 10px solid #D32F2F;
 }

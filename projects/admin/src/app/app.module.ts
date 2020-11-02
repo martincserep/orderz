@@ -10,6 +10,7 @@ import { MessageService } from 'primeng/api';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './shared/interceptors/Error.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { MockInterceptor } from './shared/interceptors/Mock.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,11 @@ import { SharedModule } from './shared/shared.module';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MockInterceptor,
       multi: true
     },
     MessageService

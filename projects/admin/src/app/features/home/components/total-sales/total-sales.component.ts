@@ -23,7 +23,7 @@ this.options = {
   title: {
       display: true,
       text: 'Sales',
-      fontSize: 16
+      fontSize: 26,
   },
   legend: {
       position: 'bottom'

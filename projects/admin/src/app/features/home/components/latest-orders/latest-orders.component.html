@@ -1,8 +1,38 @@
+<div id="latest-orders-container">
 <h2>Latest Orders</h2>
+<div id="latest-orders">    
 <div *ngFor="let order of latestOrders">
     <div class="p-grid order p-ai-center vertical-container new-order" *ngIf="order.status === 'NEW_ORDER'">
         <div class="p-col-1">
             <fa-icon size="2x" [icon]="newOrder" ></fa-icon>
+        </div>
+        <div class="p-col-8">
+            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
+            <p *ngFor="let food of order.orderedFoods">
+                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
+            </p>
+        </div>
+        <div class="p-col-3">
+            <button pButton pRipple label="Process" styleClass="p-button-sm" type="button"></button>
+        </div>
+    </div>
+    <div class="p-grid order p-ai-center vertical-container processing-order" *ngIf="order.status === 'PROCESSING'">
+        <div class="p-col-1">
+            <fa-icon size="2x" [icon]="processingOrder"></fa-icon>
+        </div>
+        <div class="p-col-8">
+            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
+            <p *ngFor="let food of order.orderedFoods">
+                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
+            </p>
+        </div>
+        <div class="p-col-3">
+            <button pButton pRipple label="Fulfill" styleClass="p-button-sm" class="p-button-success" type="button"></button>
+        </div>
+    </div>
+    <div class="p-grid order p-ai-center vertical-container fulfilled-order" *ngIf="order.status === 'FULFILLED'">
+        <div class="p-col-1">
+            <fa-icon size="2x" [icon]="fulfilledOrder"></fa-icon>
         </div>
         <div class="p-col-9">
             <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
@@ -10,42 +40,18 @@
                 <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
             </p>
         </div>
-        <div class="p-col-2">
-            <button pButton pRipple type="button"></button>
-        </div>
     </div>
-    <div class="p-grid order processing-order" *ngIf="order.status === 'PROCESSING'">
-        <div class="p-col-1">
-            <fa-icon size="2x" [icon]="processingOrder"></fa-icon>
-        </div>
-        <div class="p-col-11">
-            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
-            <p *ngFor="let food of order.orderedFoods">
-                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
-            </p>
-        </div>
-    </div>
-    <div class="p-grid order fulfilled-order" *ngIf="order.status === 'FULFILLED'">
-        <div class="p-col-1">
-            <fa-icon size="2x" [icon]="fulfilledOrder"></fa-icon>
-        </div>
-        <div class="p-col-11">
-            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
-            <p *ngFor="let food of order.orderedFoods">
-                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
-            </p>
-        </div>
-    </div>
-    <div class="p-grid order canceled-oder" *ngIf="order.status === 'CANCELED'">
+    <div class="p-grid order p-ai-center vertical-container canceled-oder" *ngIf="order.status === 'CANCELED'">
         <div class="p-col-1">
             <fa-icon size="2x" [icon]="cancelOrder" ></fa-icon>
         </div>
-        <div class="p-col-11">
+        <div class="p-col-9">
             <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
             <p *ngFor="let food of order.orderedFoods">
                 <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
             </p>
-            <p></p>
         </div>
     </div>
+</div>
+</div>
 </div>
