@@ -4,21 +4,27 @@
     padding-left: 1%;
     width: 90%;
     margin: auto;
-    border-radius: 2%;
+    margin: 1rem auto;
+    h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
 }
 .new-order {
-    background-color: #84bd34a6;
-    border-left: 4px solid #7ea04d;
+    color: #fefefe;
+    background-color: #0288D1A8;
+    border-left: 10px solid #0288D1;
 }
 .processing-order {
-    background-color: #bbbd34a6;
-    border-left: 4px solid #a08d4d;
+    background-color: #FBC02DA8;
+    border-left: 10px solid #FBC02D;
 }
 .fulfilled-order {
-    background-color: #34bdaba6;
-    border-left: 4px solid #4d88a0;
+    background-color: #689F38A8;
+    border-left: 10px solid #689F38;
 }
 .canceled-oder {
-    background-color: #bd3434a6;
-    border-left: 4px solid #a04d4d;
+    color: #fefefe;
+    background-color: #d32f2fa8;
+    border-left: 10px solid #D32F2F;
 }

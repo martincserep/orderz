@@ -7,7 +7,7 @@ import { faPlusSquare, faWindowClose, faCheckSquare, faExternalLinkSquareAlt } f
   templateUrl: './latest-orders.component.html',
   styleUrls: ['./latest-orders.component.scss']
 })
-export class LatestOrdersComponent implements OnInit {
+export class LatestOrdersComponent {
 
   newOrder = faPlusSquare;
   fulfilledOrder = faCheckSquare;
@@ -17,7 +17,9 @@ export class LatestOrdersComponent implements OnInit {
     this.latestOrders = [{
       customer: {name: 'Istvan Szent', address: 'Allamalapitas ter 4', phoneNumber: '+36701000001'},
       orderedFoods: [
-        {name: 'Margharita Pizza', price: '$3.9', count: 1}
+        {name: 'Margharita Pizza', price: 3.9, count: 3},
+        {name: 'Cheeseburger', price: 2.5, count: 2},
+        {name: 'Lime Lemonade', price: 1.9, count: 5},
       ],
       fulfilledAt: new Date('10/31/2020 10:01:05 PM'),
       processingStartingAt: new Date('10/31/2020 09:54:32 PM'),
@@ -26,7 +28,7 @@ export class LatestOrdersComponent implements OnInit {
     },{
       customer: {name: 'Istvan Szent', address: 'Allamalapitas ter 4', phoneNumber: '+36701000001'},
       orderedFoods: [
-        {name: 'Margharita Pizza', price: '$3.9', count: 1}
+        {name: 'Margharita Pizza', price: 3.9, count: 1}
       ],
       fulfilledAt: new Date('10/31/2020 10:01:05 PM'),
       processingStartingAt: new Date('10/31/2020 09:54:32 PM'),
@@ -35,7 +37,7 @@ export class LatestOrdersComponent implements OnInit {
     },{
       customer: {name: 'Istvan Szent', address: 'Allamalapitas ter 4', phoneNumber: '+36701000001'},
       orderedFoods: [
-        {name: 'Margharita Pizza', price: '$3.9', count: 1}
+        {name: 'Margharita Pizza', price: 3.9, count: 1}
       ],
       fulfilledAt: new Date('10/31/2020 10:01:05 PM'),
       processingStartingAt: new Date('10/31/2020 09:54:32 PM'),
@@ -44,7 +46,7 @@ export class LatestOrdersComponent implements OnInit {
     },{
       customer: {name: 'Istvan Szent', address: 'Allamalapitas ter 4', phoneNumber: '+36701000001'},
       orderedFoods: [
-        {name: 'Margharita Pizza', price: '$3.9', count: 1}
+        {name: 'Margharita Pizza', price: 3.9, count: 1}
       ],
       fulfilledAt: new Date('10/31/2020 10:01:05 PM'),
       processingStartingAt: new Date('10/31/2020 09:54:32 PM'),
@@ -55,8 +57,5 @@ export class LatestOrdersComponent implements OnInit {
   }
 
   latestOrders: Order[] = [];
-  ngOnInit(): void {
-
-  }
 
 }

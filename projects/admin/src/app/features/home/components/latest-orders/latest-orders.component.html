@@ -1,35 +1,51 @@
 <h2>Latest Orders</h2>
 <div *ngFor="let order of latestOrders">
-    <div class="order new-order" *ngIf="order.status === 'NEW_ORDER'">
-        <div class="p-col-2">
-            <fa-icon [icon]="newOrder" ></fa-icon>
+    <div class="p-grid order p-ai-center vertical-container new-order" *ngIf="order.status === 'NEW_ORDER'">
+        <div class="p-col-1">
+            <fa-icon size="2x" [icon]="newOrder" ></fa-icon>
         </div>
-        <div class="p-col-10">
-            {{order.customer.name}}
+        <div class="p-col-9">
+            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
+            <p *ngFor="let food of order.orderedFoods">
+                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
+            </p>
+        </div>
+        <div class="p-col-2">
+            <button pButton pRipple type="button"></button>
         </div>
     </div>
-    <div class="order processing-order" *ngIf="order.status === 'PROCESSING'">
-        <div class="p-col-2">
-            <fa-icon [icon]="processingOrder"></fa-icon>
+    <div class="p-grid order processing-order" *ngIf="order.status === 'PROCESSING'">
+        <div class="p-col-1">
+            <fa-icon size="2x" [icon]="processingOrder"></fa-icon>
         </div>
-        <div>
-            {{order.customer.name}}
-        </div>
-    </div>
-    <div class="order fulfilled-order" *ngIf="order.status === 'FULFILLED'">
-        <div class="p-col-2">
-            <fa-icon [icon]="fulfilledOrder"></fa-icon>
-        </div>
-        <div>
-            {{order.customer.name}}
+        <div class="p-col-11">
+            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
+            <p *ngFor="let food of order.orderedFoods">
+                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
+            </p>
         </div>
     </div>
-    <div class="order canceled-oder" *ngIf="order.status === 'CANCELED'">
-        <div class="p-col-2">
-            <fa-icon [icon]="cancelOrder" ></fa-icon>
+    <div class="p-grid order fulfilled-order" *ngIf="order.status === 'FULFILLED'">
+        <div class="p-col-1">
+            <fa-icon size="2x" [icon]="fulfilledOrder"></fa-icon>
         </div>
-        <div>
-            {{order.customer.name}}
+        <div class="p-col-11">
+            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
+            <p *ngFor="let food of order.orderedFoods">
+                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="p-grid order canceled-oder" *ngIf="order.status === 'CANCELED'">
+        <div class="p-col-1">
+            <fa-icon size="2x" [icon]="cancelOrder" ></fa-icon>
+        </div>
+        <div class="p-col-11">
+            <h2>{{order.customer.name}} - {{order.customer.address}}</h2>
+            <p *ngFor="let food of order.orderedFoods">
+                <span>{{food.name}} - {{food.count}}: {{food.price * food.count}}</span>
+            </p>
+            <p></p>
         </div>
     </div>
 </div>

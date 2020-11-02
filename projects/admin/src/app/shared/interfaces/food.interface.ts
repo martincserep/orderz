@@ -1,5 +1,5 @@
 export interface Food {
     name: string;
-    price: string;
+    price: number;
     count?: number;
 }
